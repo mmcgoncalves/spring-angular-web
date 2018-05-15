@@ -2,10 +2,11 @@ import { HomeComponent } from './components/home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/security/login/login.component';
 import { ModuleWithProviders } from '@angular/core';
+import { AuthGuard } from './components/security/auth.guard';
 
 export const ROUTES: Routes = [
     { path: 'login' , component: LoginComponent },
-    { path: '' , component:  HomeComponent /*, canActivate: [AuthGuard]*/},
+    { path: '' , component:  HomeComponent, canActivate: [AuthGuard]},
    /* { path: 'user-new' , component: UserNewComponent, canActivate: [AuthGuard] },
     { path: 'user-new/:id' , component: UserNewComponent, canActivate: [AuthGuard] },
     { path: 'user-list' , component: UserListComponent, canActivate: [AuthGuard] },
