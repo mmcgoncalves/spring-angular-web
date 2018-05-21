@@ -1,6 +1,6 @@
 <header class="main-header">
   <!-- Logo -->
-  <a href="index2.html" class="logo">
+  <a [routerLink]="['/']" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>H</b>D</span>
     <!-- logo for regular state and mobile devices -->
@@ -19,12 +19,12 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">    
-            <span class="hidden-xs">email - ADMIN</span>
+            <span class="hidden-xs">{{ shared.user.email }} - {{ shared.user.profile }}</span>
           </a>
         </li>
         <!-- Control Sidebar Toggle Button -->
         <li>
-          <a href="#" data-toggle="control-sidebar"><i class="fa fa-power-off"></i></a>
+          <a [routerLink]="" (click)="signOut()" data-toggle="control-sidebar"><i class="fa fa-power-off"></i></a>
         </li>
       </ul>
     </div>
